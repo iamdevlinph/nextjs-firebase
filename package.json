@@ -1,0 +1,65 @@
+{
+  "name": "nextjs-firebase",
+  "version": "1.0.0",
+  "description": "NextJS + Firebase + Ducks",
+  "scripts": {
+    "dev": "node src/server.js",
+    "build": "next build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "now-build": "next build"
+  },
+  "dependencies": {
+    "@zeit/next-css": "1.0.1",
+    "@zeit/webpack-asset-relocator-loader": "0.6.2",
+    "firebase": "6.2.4",
+    "husky": "3.0.0",
+    "lint-staged": "9.0.2",
+    "next": "8.1.0",
+    "next-redux-saga": "4.0.2",
+    "next-redux-wrapper": "3.0.0-alpha.3",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-redux": "7.1.0",
+    "redux": "4.0.1",
+    "redux-saga": "1.0.5",
+    "styled-components": "4.3.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.2",
+    "babel-plugin-styled-components": "1.10.6",
+    "eslint": "6.0.1",
+    "eslint-config-airbnb": "17.1.1",
+    "eslint-config-iamdevlinph": "1.0.10",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-plugin-html": "6.0.0",
+    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-react": "7.14.2",
+    "express": "4.17.1",
+    "prettier": "1.18.2",
+    "redux-devtools-extension": "2.13.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamdevlinph/nextjs-firebase.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamdevlinph/nextjs-firebase/issues"
+  },
+  "homepage": "https://github.com/iamdevlinph/nextjs-firebase#readme"
+}
