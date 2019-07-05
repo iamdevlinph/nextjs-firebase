@@ -3,7 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
-import GlobalStyle from '../src/styles';
+import { GlobalStyle } from '../src/styles';
 import { Head } from '../src/components';
 import createStore from '../src/ducks/store';
 import '../src/ducks/firebase';
