@@ -1,4 +1,5 @@
 const withCSS = require('@zeit/next-css');
+const withProgressBar = require('next-progressbar');
 
 // https://github.com/zeit/next-plugins/issues/267#issuecomment-436454048
 if (typeof require !== 'undefined') {
@@ -59,11 +60,16 @@ const withAssetRelocator = (nextConfig = {}) => {
   });
 };
 
-module.exports = withAssetRelocator(
-  withCSS({
-    target: 'serverless',
-    env: {
-      environment,
-    },
-  })
+module.exports = withProgressBar(
+  withAssetRelocator(
+    withCSS({
+      progressBar: {
+        profile: true,
+      },
+      target: 'serverless',
+      env: {
+        environment,
+      },
+    })
+  )
 );
