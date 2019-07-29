@@ -14,11 +14,11 @@ function* postsWillFetch() {
       const posts = [];
       const data = yield take(channel);
       data.forEach(doc => {
-        posts.push({ ...doc.data });
+        posts.push(doc.data());
       });
       yield put({
         type: postTypes.FETCH_POSTS_SUCCESS,
-        paylaod: posts,
+        payload: posts,
       });
     }
   } catch (e) {

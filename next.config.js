@@ -63,9 +63,9 @@ const withAssetRelocator = (nextConfig = {}) => {
 module.exports = withProgressBar(
   withAssetRelocator(
     withCSS({
-      progressBar: {
-        profile: true,
-      },
+      // progressBar: {
+      // profile: true,
+      // },
       target: 'serverless',
       env: {
         environment,

@@ -19,17 +19,17 @@ IndexPage.getInitialProps = async ({ ctx }) => {
   await new Promise(resolve => {
     const unsubscribe = store.subscribe(() => {
       const { posts } = store.getState();
-      if (posts) {
+      if (posts.allPosts) {
         unsubscribe();
         resolve();
       }
     });
-
-    const { posts } = store.getState();
-    return {
-      posts,
-    };
   });
+
+  const { allPosts } = store.getState().posts;
+  return {
+    posts: allPosts,
+  };
 };
 
 export default IndexPage;

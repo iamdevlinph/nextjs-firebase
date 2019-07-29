@@ -1,16 +1,16 @@
 import * as types from './types';
 
 const initialState = {
-  posts: [],
+  allPosts: [],
 };
 
 export default (state = initialState, action) => {
-  const { payload } = action;
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case types.FETCH_POSTS_SUCCESS:
       return {
         ...state,
-        posts: payload,
+        allPosts: payload,
       };
     default:
       return state;
