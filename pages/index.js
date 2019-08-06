@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { postsActions } from '../src/ducks/posts';
+import { MainLayout } from '../src/layouts';
+import { PostEntry } from '../src/components';
 
 const IndexPage = props => {
   const { posts } = props;
+  const postList = posts.map(val => {
+    return (
+      <PostEntry title={val.title} content={val.content} key={val.title} />
+    );
+  });
   return (
-    <div>
+    <MainLayout>
       <h2>Index Page</h2>
-      <pre>{JSON.stringify(posts, null, 2)}</pre>
-    </div>
+      <div>{postList}</div>
+    </MainLayout>
   );
 };
 
-IndexPage.getInitialProps = async ({ ctx }) => {
-  const { store } = ctx;
+IndexPage.getInitialProps = async ({ store }) => {
   store.dispatch(postsActions.requestPosts());
 
   await new Promise(resolve => {
